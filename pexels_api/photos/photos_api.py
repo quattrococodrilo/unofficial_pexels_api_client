@@ -109,12 +109,12 @@ class PhotosApi:
 
         return self
 
-    def request(self) -> dict:
+    def request(self, _url=None, _url_params=None, _secret=None) -> dict:
         self._response = requests.get(
-            self._url,
-            params=self._url_params,
+            _url if _url else self._url,
+            params=_url_params if _url_params else self._url_params,
             headers={
-                'Authorization': self._secret,
+                'Authorization': _secret if _secret else self._secret,
             }
         )
         self._data = self._response.json()
@@ -125,4 +125,10 @@ class PhotosApi:
 
     def next_page(self):
         if 'next_page' in self._data and self._data['next_page']:
-            return PhotosApi(self._end_point, self._secret)
+            request = PhotosApi(self._end_point, self._secret)
+            request.request(
+                _url=self._data['next_page'],
+                _secret=self._secret
+            )
+
+            return request

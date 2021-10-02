@@ -1,1 +1,1 @@
-from .photos_api import PhotosApi
+from .client import PhotosClient

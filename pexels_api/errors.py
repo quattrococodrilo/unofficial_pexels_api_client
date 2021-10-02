@@ -16,3 +16,10 @@ class ParamNotExists(BasePexelError):
         options = _enum.__members__.keys()
         self.message = f'{param} not exists in {name}. Valid params: {", ".join(options)}'
         super().__init__(self.message)
+
+
+class IdNotFound(BasePexelError):
+
+    def __init__(self, end_point) -> None:
+        self.message = f'ID is needed for "{end_point}"'
+        super().__init__(self.message)

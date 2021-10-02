@@ -1,4 +1,4 @@
-class PhotosResponse:
+class ResponseData:
 
     _data = None
 
@@ -6,7 +6,7 @@ class PhotosResponse:
         self._data = json
 
     def create(json):
-        return PhotosResponse(json)
+        return ResponseData(json)
 
     @property
     def photos(self) -> dict:
@@ -27,3 +27,7 @@ class PhotosResponse:
     @property
     def next_page(self):
         return self._data['next_page']
+
+    @property
+    def prev_page(self):
+        return self._data['prev_page']

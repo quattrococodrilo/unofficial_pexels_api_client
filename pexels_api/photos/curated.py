@@ -1,8 +1,8 @@
 import requests
-
 from pexels_api.enums import PhotoUrlParamsEnum
-from .response_data import ResponseData
+
 from .base_api import BaseApi
+from .response_data import ResponseData
 
 
 class Curated(BaseApi):

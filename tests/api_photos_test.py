@@ -1,5 +1,4 @@
 import unittest
-from pexels_api.enums import PhotoUrlParamsEnum
 
 from pexels_api.photos import PhotosClient
 from requests.api import request

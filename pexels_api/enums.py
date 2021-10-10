@@ -1,4 +1,5 @@
 from enum import Enum
+
 from .settings import BASE_URL
 
 

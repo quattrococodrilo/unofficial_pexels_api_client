@@ -1,10 +1,12 @@
-import requests
 import re
 
-from pexels_api.enums import PhotoUrlParamsEnum, OrientationEnum, SizeEnum, ColorEnum, LocaleEnum
+import requests
+from pexels_api.enums import (ColorEnum, LocaleEnum, OrientationEnum,
+                              PhotoUrlParamsEnum, SizeEnum)
 from pexels_api.errors import ParamNotExists
-from .response_data import ResponseData
+
 from .base_api import BaseApi
+from .response_data import ResponseData
 
 
 class Search(BaseApi):

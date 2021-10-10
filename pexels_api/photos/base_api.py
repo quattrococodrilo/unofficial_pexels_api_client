@@ -1,6 +1,5 @@
 from pexels_api.enums import PhotoEndpointEnum
 from pexels_api.errors import EndpointNotExists
-from .response_data import ResponseData
 
 
 class BaseApi:

@@ -2,7 +2,6 @@ import requests
 from pexels_api.errors import IdNotFound
 
 from .base_api import BaseApi
-from .response_data import ResponseData
 
 
 class Photo(BaseApi):
